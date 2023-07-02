@@ -103,7 +103,7 @@ const CreditApproveScreen = ({ navigation }: any) => {
                                           marginTop: 20,
                                           marginBottom: '30%',
                                     }}
-                                    onPress={() => navigation.navigate('OrderNumber')}>
+                                    onPress={() => navigation.navigate('ordernumber')}>
                                     <Text style={{ color: '#fff', fontSize: 16, fontWeight: '600' }}>
                                           Təsdiq et
                                     </Text>

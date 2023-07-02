@@ -6,6 +6,8 @@ import CreditOrder from '../screens/CreditOrder'
 import Registration from '../screens/Registration'
 import Verification from '../screens/Verification'
 import ConfirmCodeScreen from '../screens/Confirm'
+import OrderNumber from '../screens/OrderNumber'
+import OrderConfirm from '../screens/OrderConfirm'
 const Stack = createNativeStackNavigator()
 
 const MainStack = () => {
@@ -16,6 +18,8 @@ const MainStack = () => {
                         <Stack.Screen name='verification' component={Verification} />
                         <Stack.Screen name='creditorder' component={CreditOrder} />
                         <Stack.Screen name='confirm' component={ConfirmCodeScreen} />
+                        <Stack.Screen name='ordernumber' component={OrderNumber} />
+                        <Stack.Screen name='orderconfirm' component={OrderConfirm} />
                   </Stack.Navigator>
             </NavigationContainer>
       )
