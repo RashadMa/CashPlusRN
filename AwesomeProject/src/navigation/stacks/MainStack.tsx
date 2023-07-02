@@ -5,6 +5,7 @@ import { StyleSheet } from 'react-native'
 import CreditOrder from '../screens/CreditOrder'
 import Registration from '../screens/Registration'
 import Verification from '../screens/Verification'
+import ConfirmCodeScreen from '../screens/Confirm'
 const Stack = createNativeStackNavigator()
 
 const MainStack = () => {
@@ -14,6 +15,7 @@ const MainStack = () => {
                         <Stack.Screen name='register' component={Registration} />
                         <Stack.Screen name='verification' component={Verification} />
                         <Stack.Screen name='creditorder' component={CreditOrder} />
+                        <Stack.Screen name='confirm' component={ConfirmCodeScreen} />
                   </Stack.Navigator>
             </NavigationContainer>
       )

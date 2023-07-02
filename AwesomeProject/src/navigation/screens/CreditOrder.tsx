@@ -175,8 +175,18 @@ const CreditOrder = ({ navigation }: any) => {
               </View>
             </View>
             <TouchableOpacity
-              style={styles.davamBtn}
-              onPress={() => navigation.navigate('CreditApprove')}>
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#155EEF',
+                paddingVertical: 16,
+                borderWidth: 1,
+                borderColor: '#155EEF',
+                borderRadius: 8,
+                marginTop: 20,
+                marginBottom: 30,
+              }}
+              onPress={() => navigation.navigate('confirm')}>
               <Text style={{ color: '#fff', fontSize: 16, fontWeight: '600' }}>
                 Davam et
               </Text>
@@ -191,17 +201,6 @@ const CreditOrder = ({ navigation }: any) => {
 export default CreditOrder;
 
 const styles = StyleSheet.create({
-  davamBtn: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#155EEF',
-    paddingVertical: 16,
-    borderWidth: 1,
-    borderColor: '#155EEF',
-    borderRadius: 8,
-    marginTop: 20,
-    marginBottom: 30,
-  },
   container: {
     flex: 1,
     alignItems: 'center',
