@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import SvgUp from '../assets/icons/Chevron';
+import SvgDown from '../assets/icons/SvgDown';
 
 const Dropdown = ({ options, defaultOption, onSelect }: any) => {
       const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +23,7 @@ const Dropdown = ({ options, defaultOption, onSelect }: any) => {
                         <Text style={styles.selectedOptionText}>
                               {selectedOption || 'Select an option'}
                         </Text>
-                        {isOpen ? <Text>Up</Text> : <Text>Down</Text>}
+                        {isOpen ? <SvgUp/> : <SvgDown/>}
                   </TouchableOpacity>
                   {isOpen && (
                         <View style={styles.dropdownOptions}>

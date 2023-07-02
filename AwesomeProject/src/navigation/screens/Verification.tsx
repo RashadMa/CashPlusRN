@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
+import Arrow from '../../assets/icons/Arrow';
 
 const ConfirmCodeScreen = ({ navigation }: any) => {
   const [otp, setOtp] = useState(['', '', '', '']);
@@ -53,7 +54,7 @@ const ConfirmCodeScreen = ({ navigation }: any) => {
           marginHorizontal: 20,
         }}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text>Back</Text>
+          <Arrow/>
         </TouchableOpacity>
         <Text
           style={{
@@ -64,7 +65,6 @@ const ConfirmCodeScreen = ({ navigation }: any) => {
           Verification
         </Text>
       </View>
-
       <View
         style={{
           flex: 1,

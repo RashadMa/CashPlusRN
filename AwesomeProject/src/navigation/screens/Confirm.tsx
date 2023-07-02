@@ -6,6 +6,8 @@ import {
       View,
 } from 'react-native';
 import React from 'react';
+import Arrow from '../../assets/icons/Arrow';
+import Tick from '../../assets/icons/Tick';
 
 const CreditApproveScreen = ({ navigation }: any) => {
       return (
@@ -17,7 +19,7 @@ const CreditApproveScreen = ({ navigation }: any) => {
                               marginHorizontal: 20,
                         }}>
                         <TouchableOpacity onPress={() => navigation.goBack()}>
-                              <Text>Back</Text>
+                              <Arrow />
                         </TouchableOpacity>
                         <Text
                               style={{
@@ -43,7 +45,7 @@ const CreditApproveScreen = ({ navigation }: any) => {
                                                 columnGap: 10,
                                                 marginBottom: 20,
                                           }}>
-                                          <Text>Tick</Text>
+                                          <Tick />
                                           <Text style={{
                                                 fontSize: 16,
                                                 fontWeight: '400',
@@ -61,7 +63,7 @@ const CreditApproveScreen = ({ navigation }: any) => {
                                                 marginBottom: 20,
                                                 alignItems: 'flex-start',
                                           }}>
-                                          <Text>Tick</Text>
+                                          <Tick />
                                           <Text style={{
                                                 fontSize: 16,
                                                 fontWeight: '400',
@@ -78,7 +80,7 @@ const CreditApproveScreen = ({ navigation }: any) => {
                                                 marginBottom: 20,
                                                 alignItems: 'flex-start',
                                           }}>
-                                          <Text>Tick</Text>
+                                          <Tick />
                                           <Text style={{
                                                 fontSize: 16,
                                                 fontWeight: '400',

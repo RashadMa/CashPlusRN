@@ -1,4 +1,5 @@
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -11,6 +12,9 @@ import React, { useState } from 'react';
 import { DefaultTheme, PaperProvider, TextInput } from 'react-native-paper';
 import Dropdown from '../../common/Dropdown';
 import Slider from '@react-native-community/slider';
+import Arrow from '../../assets/icons/Arrow';
+import SvgManat from '../../assets/icons/Manat';
+import Notif from '../../assets/icons/Notif';
 
 const theme = {
   ...DefaultTheme,
@@ -72,7 +76,7 @@ const CreditOrder = ({ navigation }: any) => {
               marginHorizontal: 20,
             }}>
             <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Text>Back</Text>
+              <Arrow />
             </TouchableOpacity>
             <Text
               style={{
@@ -82,7 +86,7 @@ const CreditOrder = ({ navigation }: any) => {
               İpteka krediti
             </Text>
             <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Text>Notify</Text>
+              <Notif/>
             </TouchableOpacity>
           </View>
           <View style={{ marginHorizontal: 20, marginTop: 40, marginBottom: 20 }}>
@@ -120,7 +124,7 @@ const CreditOrder = ({ navigation }: any) => {
                   onChangeText={handleAmountTextInputChange}
                 />
                 <View style={{ position: 'absolute', right: 20, top: '45%' }}>
-                  <Text>Manat</Text>
+                  <SvgManat />
                 </View>
               </View>
               <Text style={{ fontSize: 16, fontWeight: '500', marginBottom: 8 }}>
