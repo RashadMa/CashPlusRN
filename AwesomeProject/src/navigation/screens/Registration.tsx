@@ -1,91 +1,100 @@
-import React from 'react'
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { TextInput } from 'react-native-paper'
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import React, { useState } from 'react';
+import { TextInput } from 'react-native-paper';
 
 const Registration = ({ navigation }: any) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   return (
-    <SafeAreaView style={{
-      flex: 1,
-      margin: 20,
-    }}>
-      <Text style={{
-        fontSize: 20,
-        fontWeight: '500',
-        textAlign: 'center',
-        color: "#101828"
-      }}>Kreditlər</Text>
-      <Text style={{
-        marginVertical: 30,
-        fontSize: 30,
-        fontWeight: '500',
-        color: "#101828"
-      }}>
-        Qeydiyyat</Text>
-      <View>
-        <TextInput
-          mode="outlined"
-          label="Mobil Nömrə"
-          placeholder="Mobil Nömrə"
-          right={<TextInput.Affix />}
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+      <View
+        style={{
+          flex: 1,
+          marginTop: 50,
+          marginHorizontal: 20,
+          justifyContent: 'space-between',
+        }}>
+        <View>
+          <Text style={{ fontSize: 30, fontWeight: '600', marginBottom: 25 }}>
+            Qeydiyyat
+          </Text>
+          <View style={{ marginBottom: 20, rowGap: 15 }}>
+            <TextInput
+              label="Mobil nömrə"
+              mode="outlined"
+              selectionColor="#000"
+              outlineColor="#98A2B3"
+              activeOutlineColor="#155EEF"
+            />
+            <TextInput
+              label="FIN Code"
+              mode="outlined"
+              selectionColor="#000"
+              outlineColor="#98A2B3"
+              activeOutlineColor="#155EEF"
+            />
+            <TextInput
+              label="Seriya Nömrəsi"
+              mode="outlined"
+              selectionColor="#000"
+              outlineColor="#98A2B3"
+              activeOutlineColor="#155EEF"
+            />
+            <View style={{ position: 'relative' }}>
+              <TextInput
+                label="Parol"
+                mode="outlined"
+                selectionColor="#000"
+                outlineColor="#98A2B3"
+                activeOutlineColor="#155EEF"
+                secureTextEntry={!showPassword}
+              />
+              <TouchableOpacity
+                onPress={togglePasswordVisibility}
+                style={styles.togglePwdStyles}>
+                {
+                  showPassword ? <Text>Hide</Text> : <Text>Show</Text>
+                }
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <TouchableOpacity
           style={{
-            marginBottom: 10,
-            height: 60,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#155EEF',
+            paddingVertical: 16,
+            borderWidth: 1,
+            borderColor: '#155EEF',
+            borderRadius: 8,
+            marginTop: 20,
+            marginBottom: 30,
           }}
-        />
-        <TextInput
-          mode="outlined"
-          label="FIN Code"
-          placeholder="FIN Code"
-          right={<TextInput.Affix />}
-          style={{
-            marginBottom: 10,
-            height: 60,
-          }}
-        />
-        <TextInput
-          mode="outlined"
-          label="Seriya Nömrəsi"
-          placeholder="Seriya Nömrəsi"
-          right={<TextInput.Affix />}
-          style={{
-            marginBottom: 10,
-            height: 60,
-          }}
-        />
-        <TextInput
-          secureTextEntry={true}
-          mode="outlined"
-          label="Parol"
-          placeholder="Parol"
-          right={<TextInput.Affix />}
-          style={{
-            marginBottom: 10,
-            height: 60,
-          }}
-        />
-      </View>
-      <View>
-        <TouchableOpacity style={{
-          height: 60,
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderRadius: 10,
-          backgroundColor: '#155EEF',
-          width: '100%',
-          position: 'absolute',
-          bottom: -320,
-        }} onPress={() => navigation.navigate("verification")}>
-          <Text style={{
-            color: '#fff',
-            fontSize: 16,
-            fontWeight: '600',
-          }}>Davam et</Text>
+          onPress={() => navigation.navigate('verification')}>
+          <Text style={{ color: '#fff', fontSize: 16, fontWeight: '600' }}>
+            Davam et
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Registration
+export default Registration;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  togglePwdStyles: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+  },
+});
